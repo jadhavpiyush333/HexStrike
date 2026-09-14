@@ -1,7 +1,7 @@
 security:
   require_allowlist: false
   require_api_key: false
-  max_concurrent_scans: 2
+  max_concurrent_scans: 4
   max_requests_per_minute: 30
   default_timeout_seconds: 120
   max_target_length: 255
@@ -12,7 +12,7 @@ profiles:
     max_concurrent: 2
   soc_evidence:
     timeout_seconds: 120
-    max_concurrent: 2
+    max_concurrent: 4
   aggressive:
     timeout_seconds: 300
-    max_concurrent: 1
+    max_concurrent: 4

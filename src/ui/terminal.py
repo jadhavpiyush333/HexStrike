@@ -33,10 +33,31 @@ def skipped(items):
     print('\n'+'-'*72); print(' SKIPPED / UNAVAILABLE STAGES'); print('-'*72)
     for item in items: print(f"  - {item.get('scanner')}: {item.get('reason')}")
 
-def recommendations(findings,fn):
-    print('\n'+'-'*72); print(' WHAT TO DO NEXT'); print('-'*72)
-    recs=fn(findings)[:10]
-    if not recs: print('  No remediation recommendations generated.'); return
-    for i,f in enumerate(recs,1):
-        print(f"{i}. [{f.get('severity')}] {f.get('title')} ({f.get('priority')})")
-        print(f"   • {f.get('action')}"); print(f"   Verify: {f.get('verification')}")
+def recommendations(findings, fn):
+    print('\n' + '-' * 72)
+    print(' WHAT TO DO NEXT')
+    print('-' * 72)
+
+    if not findings:
+        print('  No remediation recommendations generated.')
+        return
+
+    for i, finding_data in enumerate(findings[:10], 1):
+        rec = fn(finding_data)
+
+        severity = finding_data.get('severity', 'INFO')
+        title = finding_data.get('title', 'Scanner observation')
+        priority = rec.get('priority', 'REVIEW')
+        actions = rec.get('actions', [])
+        verification = rec.get(
+            'verification',
+            'Re-run the relevant scanner and confirm the evidence is no longer present.'
+        )
+
+        print(f"{i}. [{severity}] {title} ({priority})")
+
+        for action in actions:
+            print(f"   • {action}")
+
+        print(f"   Verify: {verification}")
+        print()

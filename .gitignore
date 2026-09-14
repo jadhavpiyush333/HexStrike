@@ -5,6 +5,9 @@ __pycache__/
 data/database/*.db
 data/scans/*
 data/reports/*
+data/results/*
+*.bak
 
 *.egg-info/
 .DS_Store
+
