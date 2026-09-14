@@ -1,0 +1,13 @@
+profiles:
+  safe:
+    description: Low-impact service discovery and version detection.
+    timeout_seconds: 120
+    max_concurrent: 2
+  soc_evidence:
+    description: Repeatable evidence-oriented assessment profile.
+    timeout_seconds: 180
+    max_concurrent: 2
+  aggressive:
+    description: Broad assessment profile for controlled environments.
+    timeout_seconds: 300
+    max_concurrent: 1

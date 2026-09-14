@@ -1,0 +1,14 @@
+app:
+  name: HexStrike ScanX Security Automation
+  environment: development
+security:
+  require_allowlist: true
+  max_concurrent_scans: 2
+  default_timeout_seconds: 120
+scan_profiles:
+  safe:
+    description: Low-impact service discovery for authorized lab assets.
+    nmap_args: ["-sT", "-sV", "--version-light"]
+  soc_evidence:
+    description: Conservative evidence collection for SOC investigation.
+    nmap_args: ["-sT", "-sV", "--version-light"]

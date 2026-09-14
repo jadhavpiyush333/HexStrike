@@ -1,0 +1,9 @@
+scanners:
+  discovery: [nmap, scanx]
+  web: [httpx, whatweb, nikto, nuclei]
+  content: [gobuster, ffuf]
+  domain: [amass, subfinder]
+wordlist_env: HEXSTRIKE_WEB_WORDLIST
+ollama:
+  url_env: OLLAMA_URL
+  model_env: HEXSTRIKE_OLLAMA_MODEL

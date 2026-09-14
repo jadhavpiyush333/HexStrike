@@ -1,0 +1,4 @@
+{"event": "scan_requested", "profile": "aggressive", "scan_id": "SCAN-2B328D7489", "scanner": "nmap", "target": "142.250.150.4", "timestamp": "2026-09-14T13:45:54.266650+00:00"}
+{"event": "scan_completed", "finding_count": 0, "scan_id": "SCAN-2B328D7489", "scanner": "nmap", "status": "unavailable", "timestamp": "2026-09-14T13:45:54.272609+00:00"}
+{"event": "scan_requested", "profile": "aggressive", "scan_id": "SCAN-D588C6D92D", "scanner": "scanx", "target": "142.250.150.4", "timestamp": "2026-09-14T13:45:54.275205+00:00"}
+{"event": "scan_completed", "finding_count": 0, "scan_id": "SCAN-D588C6D92D", "scanner": "scanx", "status": "unavailable", "timestamp": "2026-09-14T13:45:54.281977+00:00"}
